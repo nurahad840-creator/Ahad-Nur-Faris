@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ahad Nur Faris — CEO and Founder of MADEVON. Personal website, projects, business journey, and social profiles.">
+  <meta name="author" content="Ahad Faris">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Ahad Faris — CEO & Founder of MADEVON">
+  <meta property="og:description" content="Official personal website of Ahad Faris, CEO and Founder of MADEVON.">
+  <meta property="og:image" content="profile.jpg">
+  <title>Ahad Nur Faris | CEO & Founder of MADEVON</title>
+
+  <style>
+    :root {
+      --bg: #07100d;
+      --bg2: #0b1713;
+      --card: rgba(255,255,255,.055);
+      --border: rgba(255,255,255,.11);
+      --text: #f4f7f4;
+      --muted: #aab8b0;
+      --accent: #c8a95b;
+      --accent2: #e7d08a;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(200,169,91,.13), transparent 25%),
+        radial-gradient(circle at 10% 30%, rgba(43,111,82,.14), transparent 28%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .nav {
+      position: fixed;
+      z-index: 50;
+      top: 0; left: 0; right: 0;
+      background: rgba(7,16,13,.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: auto;
+      height: 72px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      color: #c8d0cb;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .hero {
+      min-height: 100svh;
+      max-width: var(--max);
+      margin: auto;
+      padding: 125px 22px 70px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(50px, 7vw, 88px);
+      line-height: .95;
+      letter-spacing: -.055em;
+      margin-bottom: 22px;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .hero h2 {
+      font-size: clamp(18px, 2vw, 25px);
+      font-weight: 500;
+      color: #d8dfdb;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.045);
+      font-size: 14px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #10130f;
+      border-color: var(--accent);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .portrait-wrap {
+      position: relative;
+      width: min(100%, 430px);
+      margin-left: auto;
+    }
+
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border: 1px solid rgba(200,169,91,.35);
+      border-radius: 28px;
+      transform: rotate(3deg);
+    }
+
+    .portrait {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 24px;
+      filter: saturate(.9);
+      box-shadow: 0 35px 90px rgba(0,0,0,.42);
+    }
+
+    section {
+      max-width: var(--max);
+      margin: auto;
+      padding: 90px 22px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 42px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      backdrop-filter: blur(15px);
+    }
+
+    .glass h3 { margin-bottom: 10px; font-size: 21px; }
+    .glass p { color: var(--muted); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 230px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project .number {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .15em;
+      font-weight: 800;
+      margin-bottom: 50px;
+    }
+
+    .project h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .project p { color: var(--muted); }
+
+    .tag {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 6px 10px;
+      border: 1px solid rgba(200,169,91,.3);
+      color: var(--accent2);
+      border-radius: 999px;
+      font-size: 11px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .gallery .photo {
+      aspect-ratio: 1 / 1.15;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #101814;
+      border: 1px solid var(--border);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery .photo:hover img { transform: scale(1.04); }
+
+    .photo-note {
+      margin-top: 14px;
+      color: #7f8d85;
+      font-size: 12px;
+    }
+
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .social {
+      text-align: center;
+      padding: 18px 10px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+      transition: .25s;
+    }
+
+    .social strong { display: block; margin-bottom: 3px; }
+    .social small { color: var(--muted); }
+    .social:hover { border-color: rgba(200,169,91,.45); transform: translateY(-2px); }
+
+    .contact {
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .contact-card {
+      max-width: 760px;
+      margin: auto;
+      background: linear-gradient(145deg, rgba(200,169,91,.12), rgba(255,255,255,.035));
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 28px 22px;
+      text-align: center;
+      color: #7f8d85;
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner { height: 62px; }
+      .nav-links { display: none; }
+
+      .hero {
+        min-height: auto;
+        padding-top: 110px;
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .portrait-wrap {
+        width: min(88vw, 390px);
+        margin: 0 auto;
+        order: -1;
+      }
+
+      h1 { font-size: clamp(48px, 15vw, 70px); }
+
+      .hero p { font-size: 15px; }
+
+      section { padding: 70px 18px; }
+
+      .about-grid,
+      .projects { grid-template-columns: 1fr; }
+
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+
+      .socials { grid-template-columns: repeat(2, 1fr); }
+
+      .social:last-child { grid-column: 1 / -1; }
+
+      .glass { padding: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home">AHAD <span>FARIS</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#social">Social</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">CEO & Founder · MADEVON</div>
+        <h1>Ahad <span>Faris.</span></h1>
+        <h2>Building ideas into brands, products and businesses.</h2>
+        <p>
+          I’m Ahad Nur Faris, an entrepreneur and the CEO & Founder of MADEVON.
+          I’m interested in building modern Bangladeshi brands, exploring technology
+          and turning ambitious ideas into real products and businesses.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="#about">Explore My Story</a>
+          <a class="btn" href="#social">Find Me Online</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <img class="portrait" src="profile.jpg" alt="Ahad Faris — CEO and Founder of MADEVON">
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-label">01 · About</div>
+      <h2 class="section-title">A young founder with a long-term vision.</h2>
+      <p class="section-intro">
+        My focus is on learning, creating and building. I want MADEVON to grow into
+        a diversified Bangladeshi company with products and brands people can trust.
+      </p>
+
+      <div class="about-grid">
+        <article class="glass">
+          <h3>My Vision</h3>
+          <p>
+            Build a company from Bangladesh that combines thoughtful design,
+            technology, quality products and strong brand identity — while growing
+            step by step from small ideas into something much bigger.
+          </p>
+        </article>
+
+        <article class="glass">
+          <h3>What I Work On</h3>
+          <p>
+            Entrepreneurship, brand building, watches, product concepts,
+            digital projects, creative design and business systems. I’m always
+            experimenting, learning and looking for the next idea to build.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-label">02 · Projects</div>
+      <h2 class="section-title">Building the MADEVON ecosystem.</h2>
+      <p class="section-intro">
+        These are some of the areas connected to my current entrepreneurial journey.
+      </p>
+
+      <div class="projects">
+        <article class="glass project">
+          <div class="number">01 / MAIN COMPANY</div>
+          <h3>MADEVON</h3>
+          <p>The parent brand and long-term company vision.</p>
+          <span class="tag">Founder · CEO</span>
+        </article>
+
+        <article class="glass project">
+          <div class="number">02 / WATCH BRAND</div>
+          <h3>Watch Core</h3>
+          <p>A watch-focused sub-brand built around modern design and accessible luxury.</p>
+          <span class="tag">Watch Core by MADEVON</span>
+        </article>
+
+        <article class="glass project">
+          <div class="number">03 / DIGITAL</div>
+          <h3>Business Systems</h3>
+          <p>Digital tools and systems designed to make small businesses easier to manage.</p>
+          <span class="tag">Technology · Design</span>
+        </article>
+
+        <article class="glass project">
+          <div class="number">04 / FUTURE</div>
+          <h3>More to Come</h3>
+          <p>Future products, brands and ventures will be added as the journey develops.</p>
+          <span class="tag">Building in public</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-label">03 · Gallery</div>
+      <h2 class="section-title">Moments & work.</h2>
+      <p class="section-intro">
+        A personal collection of photos, events, projects and milestones.
+      </p>
+
+      <div class="gallery">
+        <div class="photo"><img src="profile.jpg" alt="Ahad Faris"></div>
+        <div class="photo"><img src="Sec.jpeg" alt="Ahad Faris portrait"></div>
+        <div class="photo"><img src="Third.jpg" alt="Ahad Faris personal photo"></div>
+        <div class="photo"><img src="Fourth.png" alt="Ahad Faris personal photo"></div>
+      </div>
+      <div class="photo-note">Replace the repeated images above with your other photos when you have them.</div>
+    </section>
+
+    <section id="social">
+      <div class="section-label">04 · Social</div>
+      <h2 class="section-title">Find me online.</h2>
+      <p class="section-intro">
+        Replace the placeholder links below with your actual public profiles.
+        Keeping your name consistent across platforms helps create a clearer online identity.
+      </p>
+
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/ahad_faris/?hl=en" target="_blank" rel="noopener">
+          <strong>Instagram</strong><small>Ahad Nur | Faris</small>
+        </a>
+        <a class="social" href="https://www.facebook.com/me/" target="_blank" rel="noopener">
+          <strong>Facebook</strong><small>Ahad Nur (faris)</small>
+        </a>
+        <a class="social" href="#" target="_blank" rel="noopener">
+          <strong>TikTok</strong><small>Coming Soon....</small>
+        </a>
+        <a class="social" href="#" target="_blank" rel="noopener">
+          <strong>YouTube</strong><small>Coming Soon....</small>
+        </a>
+        <a class="social" href="#" target="_blank" rel="noopener">
+          <strong>LinkedIn</strong><small>Coming Soon....</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="glass contact-card">
+        <div class="section-label">05 · Connect</div>
+        <h2 class="section-title">Let’s build something meaningful.</h2>
+        <p class="section-intro" style="margin: 0 auto 25px;">
+          For business, collaboration or project inquiries, connect with me through
+          one of my public social profiles.
+        </p>
+        <a class="btn primary" href="#social">View Social Profiles</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Ahad Nur Faris · CEO & Founder of MADEVON
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
